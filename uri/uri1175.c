@@ -2,24 +2,23 @@
 
 int main(void)
 {
-    int lim = 0;
-    int n = 0;
+    int n[20] = {0};
+    int troca = 19;
+    int temp  = 0;
 
-    scanf("%d", &lim);
+    for (int i = 0; i < 20; ++i)
+        scanf("%d", &n[i]);
 
-    for (int i = 0; i < lim; ++i)
+    for (int i = 0; i < 10; ++i)
     {
-        n = 0;
-        int prime = 0;
-
-        scanf("%d", &n);
-        for (int j = 1; j <= n; ++j)
-            if (n % j == 0)
-                ++prime;
-        if (prime > 1)
-            printf("%d nao eh primo\n", n);
-        else
-            printf("%d eh primo\n", n);
+        temp = n[i];
+        n[i] = n[troca];
+        n[troca] = temp;
+        --troca;
     }
+
+    for (int i = 0; i < 20; ++i)
+        printf("N[%d] = %d\n", i, n[i]);
+
     return 0;
 }
