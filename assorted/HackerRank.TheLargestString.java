@@ -77,9 +77,10 @@ class Main {
             ++charCount[base[i] - 'a'];
         }
 
-        // Poorly written exercise. Multiple answers fit the requirements,
-        // but exercise accepts a single solution. Accepts only when starting 
-        // from last letter in the alphabet and going backwards.
+        // Exercise wants the biggest alphabetically string possible. As if the letter 'a'
+        // is worth 0 points, 'b' 1 point, 'e', 4 points, etc. So the string with most
+        // poits possible. Greedy algorithm, start with z, and always get the letter that
+        // is worth most points.
         for (int i = 'z' - 'a'; i >= 0; --i) {
 
             // If there are characters left with that letter.
